@@ -1,14 +1,19 @@
 <table>
-    <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    </tr>
-</table>
+    <thead>
+        <tr>
+            <th>Order No.</th>
+            <th>Name</th>
+            <th>Coffee List</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let order of coffeeOrders">
+            <td>{{ order.payload.doc.data().orderNumber }}</td>
+            <td>{{ order.payload.doc.data().customerName }}</td>
+            <td><span 
+                *ngFor="let coffee of order.payload.doc.data().coffeeOrder">
+                {{ coffee }}
+                </span>
+            </td>
+        </tr>
+    </tbody></table>
