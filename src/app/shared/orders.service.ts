@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { FormControl, FormGroup } from "@angular/forms";
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Injectable({
   providedIn: 'root'
 })
 export class OrdersService {
 
-  constructor() { }
+  constructor( private firestore: AngularFirestore ) { }
   form = new FormGroup({        
     customerName: new FormControl(''),
     orderNumber: new FormControl(''),
