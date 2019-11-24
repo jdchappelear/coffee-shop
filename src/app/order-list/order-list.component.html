@@ -15,5 +15,9 @@
                 {{ coffee }}
                 </span>
             </td>
+            <td [hidden]="order.payload.doc.data().completed" 
+                 (click)="markCompleted(order)">
+                <i class="material-icons">check</i>
+            </td>
         </tr>
     </tbody></table>
